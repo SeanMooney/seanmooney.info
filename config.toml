@@ -1,6 +1,7 @@
-baseurl = "http://seanmooney.info"
+baseurl = "https://www.seanmooney.info"
 languageCode = "en-ie"
 title = "my new web site"
+theme = "polymer"
 [params]
   description = "I <3 making web site"
   mainIcon = "/img/hugo.png"
