@@ -1,17 +1,8 @@
 baseurl = "https://www.seanmooney.info"
 languageCode = "en-ie"
-title = "my new web site"
-theme = "polymer"
+title = "today i learned"
+theme = "future-imperfect"
 [params]
-  description = "I <3 making web site"
+  description = "A blog and portfile of thing i discover day to day."
   mainIcon = "/img/hugo.png"
 
-[[params.social]]
-    title = "twitter"
-    url = "https://twitter.com/SBootstrap"
-[[params.social]]
-    title = "github"
-    url = "https://github.com/IronSummitMedia/startbootstrap"
-[[params.social]]
-    title = "linkedin"
-    url = ""
