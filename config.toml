@@ -1,7 +1,7 @@
 baseurl = "https://www.seanmooney.info"
 languageCode = "en-ie"
 title = "today i learned"
-theme = "future-imperfect"
+theme = "hugo-future-imperfect"
 [params]
   description = "A blog and portfile of thing i discover day to day."
   mainIcon = "/img/hugo.png"
