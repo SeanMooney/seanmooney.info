@@ -20,19 +20,19 @@ software platform for cloud computing, mostly deployed as an
 infrastructure-as-a-service (IaaS).
 
 While that is true, it is incomplete and unless you know what infrastructure 
-as a service is its not very helpful.Granted the wiki page does acutlly
-explain what openstack and what openstack does but ill have a go anyway.
-So OpenStack as software, is a collection of composable inter related projects
-primarialy written in python, for creating private and public clouds enviornments.
+as a service is it's not very helpful.Granted the wiki page does actually
+explain what OpenStack and what OpenStack does but ill have a go anyway.
+So OpenStack as software, is a collection of composable interrelated projects
+primarily written in python, for creating private and public clouds environments.
 
-Openstack provides an abstraction layer that allow a collection of severs 
+OpenStack provides an abstraction layer that allows a collection of servers 
 to be managed as pools of compute, storage and networking services.
-compute, storeage and networking are the 3 pillars of IT service that
-make up a standed it infractucure. As openstack provides a software interface
-to manage these 3 pillars of IT infrstructure it is a Infrastructure as a service offering.
+compute, storage and networking are the 3 pillars of IT service that
+make up a standard IT infrastructure. As OpenStack provides a software interface
+to manage these 3 pillars of IT infrastructure it is an Infrastructure as a service offering.
 
 
-The project that make up Openstacks IaaS offering are what used to be know as
+The project that makes up OpenStack IaaS offering are what used to be know as
 the OpenStack core projects.
 
 Core Projects:
@@ -46,15 +46,15 @@ Core Projects:
 <li> swift: Object Storage Project</li>
 </ul>
 
-Non Core projects?:
+Non-Core projects?:
 -------------------
-But if there is a Core then are there more non core projects?
-For openstack that is a resounding YES!!! infact since the
-creation of the <a href="https://github.com/openstack/governance/blob/master/resolutions/20141202-project-structure-reform-spec.rst">big tent</a> and arguably before, the conpendium of openstack
-and openstack releated projects has been expanding beyond IaaS to Orchestration,
-Platform as a service, advanced services such as container orchestration and supprot
-services such as workflow engings,database as a service, backup as a service and
-many other microservices that can be composed to build your own openstack powered application.
+But if there is a Core then are there more non-core projects?
+For OpenStack that is a resounding YES!!! in fact since the
+creation of the <a href="https://github.com/openstack/governance/blob/master/resolutions/20141202-project-structure-reform-spec.rst">big tent</a> and arguably before, the compendium of OpenStack
+and OpenStack related projects has been expanding beyond IaaS to Orchestration,
+Platform as a service, advanced services such as container orchestration and support
+services such as workflow engines, database as a service, backup as a service and
+many other micro services that can be composed to build your own OpenStack-powered application.
 
 A listing of offical project teams can be found in the openstack <a href="https://governance.openstack.org/tc/reference/projects/">govournace</a> repo
 and many other affilated projects can be found by exploring the openstack namesace on <a href="https://github.com/openstack">github</a>.
@@ -63,19 +63,19 @@ and many other affilated projects can be found by exploring the openstack namesa
  
 How mature are all test projects?
 ---------------------------------
-With all these core and non core project to choose for do i need them all?
+With all these core and non-core project to choose for do I need them all?
 How mature are they really? Are they all ready to use in my production application?
 
-Well the answer to the first question is simple, openstack is a compisition of microservices that
-work togher to provide a could of your own desigin. if you dont need object storage then you
+Well, the answer to the first question is simple, OpenStack is a composition of micro services that
+work together to provide a could of your own design. if you don't need object storage then you
 can deploy without swift, already have ceph deployed? no problem you can have cinder,nova and glance
-use that as your storage backend. do you want dns as a service by not orchestration?
+use that as your storage backend. do you want DNS as a service by not orchestration?
 you can deploy designate but leave heat out of your cloud deployment.
 
-The secound question of how mature these projects are is a little harder to answer.
-The OpenStack Core project have matured over many release to be stable and production
-ready, the advanced services are at differing level of maturaty but luckilly the
-OpenStack foundation have been developing a tool to help you make up your own mind.
+The second question of how mature these projects are is a little harder to answer.
+The OpenStack Core project have matured over many releases to be stable and production
+ready, the advanced services are at a differing level of maturity but luckily the
+OpenStack foundation has been developing a tool to help you make up your own mind.
 
 The OpenStack <a href="https://www.openstack.org/software/project-navigator">Project Navigator</a> is a great place to start and if you still
 have question the reaching out to the comunity is as easy as jumping on <a href="https://wiki.openstack.org/wiki/IRC">irc</a> or
