@@ -1,14 +1,9 @@
 +++
-type = "post"
-featuredpath = ""
 date = "2017-02-05T18:51:40Z"
 title = "what is openstack"
 author = "Sean Mooney"
-featured = ""
-linktitle = ""
 description = "Intro to the OpenStack project"
-categories = ["openstack"]
-featuredalt = ""
+tags = ["openstack",]
 +++
 
 What Is OpenStack?

@@ -1,0 +1,103 @@
+# If your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would
+# contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
+baseURL: "https://www.seanmooney.info"
+title: "Today I learned"
+copyright: "© Sean Mooney"
+theme: [PaperMod]
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: true
+buildFuture: true
+buildExpired: true
+enableEmoji: true
+pygmentsUseClasses: true
+mainsections: ["blog"]
+
+minify:
+  disableXML: true
+  # minifyOutput: true
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        - name: Blog
+          url: blog
+          weight: 5
+        - name: Archives
+          url: archives/
+          weight: 50
+        - name: Search
+          url: search/
+          weight: 10
+        - name: Tags
+          url: tags/
+          weight: 10
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  description: "A blog and portfile of thing i discover day to day."
+  author: "Sean Mooney"
+  # author: ["Me", "You"] # multiple authors
+
+  defaultTheme: dark
+  # disableThemeToggle: true
+  ShowShareButtons: true
+  ShowReadingTime: true
+  # disableSpecial1stPost: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: true
+  # comments: false
+  images: ["images/papermod-cover.png"]
+
+  homeInfoParams:
+    Title: Things i discover day to day.
+    Content: |
+      Musings of an open-source software engineer. I cant claim
+      that anything i write will be useful or spelled correctly
+      but this blog will document thing i found interesting.
+
+  socialIcons:
+    - name: github
+      title: View Source on Github
+      url: "https://github.com/SeanMooney"
+
+  editPost:
+    URL: "https://github.com/SeanMooney/seanmooney.info/tree/master/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content", "tag"]
+
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
