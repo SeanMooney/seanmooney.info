@@ -9,7 +9,7 @@ tags = ["openstack",]
 What Is OpenStack?
 ==================
 
-For those of you who have not heard of "OpenStack" or the <a href="http://openstack.org">OpenStack Foundation</a>,
+For those of you who have not heard of "OpenStack" or the [OpenStack Foundation](https://www.openstack.org),
 you might be wondering what it is. Wiki defines it as an a free and open-source
 software platform for cloud computing, mostly deployed as an
 infrastructure-as-a-service (IaaS).
@@ -32,27 +32,24 @@ the OpenStack core projects.
 
 Core Projects:
 --------------
-<ul>
-<li> Nova: Compute Project</li>
-<li> Neutron: Networking Project</li>
-<li> keystone: Autentication Project</li>
-<li> Glance: Images as a service Project</li>
-<li> Cinder: Block Storeage Project</li>
-<li> swift: Object Storage Project</li>
-</ul>
+- [Nova](https://opendev.org/openstack/nova): Compute Project
+- [Neutron](https://opendev.org/openstack/neutron): Networking Project
+- [Keystone](https://opendev.org/openstack/keystone): Authentication Project
+- [Glance](https://opendev.org/openstack/glance): Images as a service Project
+- [Cinder](https://opendev.org/openstack/cinder): Block Storage Project
+- [Swift](https://opendev.org/openstack/swift): Object Storage Project
 
 Non-Core projects?:
 -------------------
 But if there is a Core then are there more non-core projects?
 For OpenStack that is a resounding YES!!! in fact since the
-creation of the <a href="https://github.com/openstack/governance/blob/master/resolutions/20141202-project-structure-reform-spec.rst">big tent</a> and arguably before, the compendium of OpenStack
+creation of the [big tent](https://github.com/openstack/governance/blob/master/resolutions/20141202-project-structure-reform-spec.rst) and arguably before, the compendium of OpenStack
 and OpenStack related projects has been expanding beyond IaaS to Orchestration,
 Platform as a service, advanced services such as container orchestration and support
 services such as workflow engines, database as a service, backup as a service and
 many other micro services that can be composed to build your own OpenStack-powered application.
 
-A listing of offical project teams can be found in the openstack <a href="https://governance.openstack.org/tc/reference/projects/">govournace</a> repo
-and many other affilated projects can be found by exploring the openstack namesace on <a href="https://github.com/openstack">github</a>.
+A listing of offical project teams can be found in the [openstack governance repo](https://governance.openstack.org/tc/reference/projects/).
 
 
  
@@ -72,16 +69,16 @@ The OpenStack Core project have matured over many releases to be stable and prod
 ready, the advanced services are at a differing level of maturity but luckily the
 OpenStack foundation has been developing a tool to help you make up your own mind.
 
-The OpenStack <a href="https://www.openstack.org/software/project-navigator">Project Navigator</a> is a great place to start and if you still
-have question the reaching out to the comunity is as easy as jumping on <a href="https://wiki.openstack.org/wiki/IRC">irc</a> or
-sending a mail to the <a href="mailto:openstack@lists.openstack.org">mailing list</a>.
+The OpenStack [Project Navigator](https://www.openstack.org/software/project-navigator) is a great place to start and if you still
+have question the reaching out to the comunity is as easy as jumping on [IRC](https://wiki.openstack.org/wiki/IRC) or
+sending a mail to the [mailing list](https://lists.openstack.org/archives/list/openstack-discuss@lists.openstack.org/).
 
 Future Reading
 -------------- 
-<ul>
-<li><a href="http://www.openstack.org">Openstack homepage</a></li>
-<li><a href="https://www.openstack.org/software">Openstack software overview</a></li>
-<li><a href="https://www.youtube.com/watch?v=hWWSaBOMTNo">Openstack architecture 10,000 feet</a></li>
-<li><a href="https://www.youtube.com/playlist?list=PLG2eb1MxWbfEqFEbziT9geOOXwiw9zZOm">intro to neutron</a></li>
-<li><a href="https://www.youtube.com/user/OpenStackFoundation">Openstack Foundation youtube</a></li>
-</ul>
+
+- [Openstack homepage](http://www.openstack.org)
+- [Openstack software overview](https://www.openstack.org/software)
+- [Openstack architecture 10,000 feet](https://www.youtube.com/watch?v=hWWSaBOMTNo)
+- [Intro to neutron](https://www.youtube.com/playlist?list=PLG2eb1MxWbfEqFEbziT9geOOXwiw9zZOm)
+- [Openstack Foundation youtube](https://www.youtube.com/user/OpenStackFoundation)
+
