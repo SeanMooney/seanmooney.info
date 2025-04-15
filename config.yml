@@ -51,7 +51,6 @@ params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   description: "A blog and portfile of thing i discover day to day."
   author: "Sean Mooney"
-  # author: ["Me", "You"] # multiple authors
 
   defaultTheme: dark
   # disableThemeToggle: true
