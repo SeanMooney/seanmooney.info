@@ -31,8 +31,8 @@ return to the concept in the future.
 
 For several years, I've had AI available in my IDE through both VS Code
 and Emacs. Last quarter, I was using Continue with local models hosted on
-Ollama. In fact that was how i mainly used ai for the last 12 month due to
-changes my company  ai policy. This quarter, I briefly experimented with
+Ollama. In fact, that was how I mainly used AI for the last 12 months due to
+changes in my company's AI policy. This quarter, I briefly experimented with
 the new Granite Code extension, but it was a regression from Continue for
 my workflow since I run Ollama remotely — a use case they don't focus on.
 
@@ -74,26 +74,25 @@ I spent an hour or two working with AI to better understand how changes in
 Python's threading model due to PEP 703 might cause the errors we're
 observing, producing a report: Debugging Eventlet GC Python 3.13
 
-Unfortunately, first documents make a strong argument for why it's more
+Unfortunately, the first document makes a strong argument for why it's more
 important to move off Eventlet quickly rather than trying to extend it to
-newer Python versions.
-as it is actully hosted in my work accout unlike the rest of my example i
-wont link ti here.
+newer Python versions. As it is actually hosted in my work account unlike the rest of my examples, I
+won't link it here.
 
-after 3 hour of trying to use ai to develop a simple repoducer https://github.com/eventlet/eventlet/issues/1032
-i used gemini to also brainstorm several diffent posisbel fixes in nova
-produceing yet another report - Nova HTTP Client Lifetime Options
+After 3 hours of trying to use AI to develop a simple reproducer https://github.com/eventlet/eventlet/issues/1032,
+I used Gemini to also brainstorm several different possible fixes in Nova,
+producing yet another report - Nova HTTP Client Lifetime Options
 
-orgially i wanted to exproe if we could perhaps take an arena allcoation stragiy ot try and keep the eventlet stack frame alive
-bug since the underlying bug is with livenesss trackingk fo the frame and hte object in them that likely wont work and
-it not easy to do in ptyhon anyway.
+Originally I wanted to explore if we could perhaps take an arena allocation strategy to try and keep the eventlet stack frame alive,
+but since the underlying bug is with liveness tracking of the frame and the objects in them, that likely won't work and
+it's not easy to do in Python anyway.
 
-my next idea was to thread local storage or a module level  WeakKeyDict to store strong refence to the http clinets
-key off the eventlet greenthread.
+My next idea was to use thread local storage or a module level WeakKeyDict to store strong references to the HTTP clients,
+keyed off the eventlet greenthread.
 
-whiel that is a clever solution it also a bit too clever and not somethign we shoudl sprinkel over the code base.
-in the end we arrive at possibel using a context manager to extend the lifecyle os i tierated with ollam and some local modes
-to create a hold context manager and then refined it to more powerful models.
+While that is a clever solution, it's also a bit too clever and not something we should sprinkle over the code base.
+In the end we arrived at possibly using a context manager to extend the lifecycle, so I iterated with Ollama and some local models
+to create a hold context manager and then refined it with more powerful models.
 
 ```
 import threading
@@ -176,26 +175,25 @@ class Hold:
         # Return None (meaning no exception is handled by this context manager)
         return None
 
-``
+```
 
-i have nto proved to my self that htis is a good approch either so for now i will capture this in this blog post for later me.
+I have not proved to myself that this is a good approach either, so for now I will capture this in this blog post for later me.
 
-finally for 
-For one of the two reported issues, we had a concrete reproducer, so I
+Finally, for one of the two reported issues, we had a concrete reproducer, so I
 used Aider (a terminal-based AI coding agent) with OpenRouter to generate
 a [possible solution](https://github.com/eventlet/eventlet/pull/1044).
-i think a better solution may be to actully refactor oslo.service in
-eventlet mode to not use fork but it was interestign to me at least
-that deepseek and a human both narrowed in on the same function. https://github.com/eventlet/eventlet/pull/1031
-i tried generating a solution with ai (without telling it about hervé work)
-to see if it coudl find a solution that would pass eventlets unit
-tests. since herve mentioned that "this patch broke more 40 unit tests
-(local run)" but didnt say which.
+I think a better solution may be to actually refactor oslo.service in
+eventlet mode to not use fork, but it was interesting to me at least
+that DeepSeek and a human both narrowed in on the same function. https://github.com/eventlet/eventlet/pull/1031
+I tried generating a solution with AI (without telling it about Hervé's work)
+to see if it could find a solution that would pass eventlet's unit
+tests. Since Hervé mentioned that "this patch broke more than 40 unit tests
+(local run)" but didn't say which.
 
-so without biaising the ai usign the same repoducer i wanted to see if it
-coudl come up with a solution and it did. is it correct? proably not but
-it is too the same part of the code and at least somewhat related to
-hervé's approch.
+So without biasing the AI using the same reproducer, I wanted to see if it
+could come up with a solution and it did. Is it correct? Probably not, but
+it's in the same part of the code and at least somewhat related to
+Hervé's approach.
 
 
 ## Creating an AI Style Guide for OpenStack
@@ -225,42 +223,42 @@ I created the [OpenStack AI Style Guide](https://github.com/SeanMooney/openstack
 
 After about 20 iterations with Claude and several earlier versions, I used Claude Code to create a repository that would be easy for AI tools to consume. The end result is the [OpenStack AI Style Guide](https://github.com/SeanMooney/openstack-ai-style-guide).
 
-## enhancing my emacs config
+## Enhancing My Emacs Config
 
-  Over the past few days, my Emacs configuration has undergone significant evolution, while i started with a curated literate config it has transitioning from a
-  basic setup functioanl setup to a sophisticated config with enhanced ai integration.
-  
-  The most dramatic change was a complete
-  structural refactor that consolidated scattered settings into proper use-package blocks, fixed critical
-  startup errors, and embraced true literate programming principles—reducing the codebase by nearly 300
-  lines while dramatically improving maintainability.
+Over the past few days, my Emacs configuration has undergone significant evolution. While I started with a curated literate config, it has transitioned from a
+basic functional setup to a sophisticated config with enhanced AI integration.
 
-while there wasnt anything wrong persay in how i organised the most of the
-section before there is a use_package convention where use_package can
-be used to configure inbuilt setting not jsut third party packages.
-before i used that inconsistently but ai was able to help me refine
-my config an fix some bugs along the way.
+The most dramatic change was a complete
+structural refactor that consolidated scattered settings into proper use-package blocks, fixed critical
+startup errors, and embraced true literate programming principles—reducing the codebase by nearly 300
+lines while dramatically improving maintainability.
 
-  The configuration has also gained a strong focus on accessibility and professional writing. New additions
-   include dyslexia-friendly font presets with OpenDyslexic, distraction-free writing environments via
-  olivetti, and comprehensive spell-checking workflows with writegood-mode and codespell integration.
-  Perhaps most notably, I've integrated Claude Code directly into the workflow, enabling AI-assisted
-  configuration management and code review. The result is a modern, accessible, and AI-enhanced Emacs
-  environment that prioritizes both developer productivity and inclusive design.
-  
-This is perhaps partly an exersie in spite drivern developemnt rather then
-something i expect others to use. for years i have put off ever creating
-my own emacs config as i tend to not heivlly customise the tools i use.
-but a few months ago vscode just got on my nerves so i unearthed my old
-custom emacs config and decied to actully give building it out proably a shot. instead of usinge doom or spacemacs i stript everythign back to basics
-and started a literate config form scratch. the result.
+While there wasn't anything wrong per se in how I organized most of the
+sections before, there is a use-package convention where use-package can
+be used to configure built-in settings, not just third party packages.
+Before I used that inconsistently, but AI was able to help me refine
+my config and fix some bugs along the way.
+
+The configuration has also gained a strong focus on accessibility and professional writing. New additions
+include dyslexia-friendly font presets with OpenDyslexic, distraction-free writing environments via
+olivetti, and comprehensive spell-checking workflows with writegood-mode and codespell integration.
+Perhaps most notably, I've integrated Claude Code directly into the workflow, enabling AI-assisted
+configuration management and code review. The result is a modern, accessible, and AI-enhanced Emacs
+environment that prioritizes both developer productivity and inclusive design.
+
+This is perhaps partly an exercise in spite-driven development rather than
+something I expect others to use. For years I have put off ever creating
+my own Emacs config as I tend to not heavily customize the tools I use.
+But a few months ago VS Code just got on my nerves, so I unearthed my old
+custom Emacs config and decided to actually give building it out properly a shot. Instead of using Doom or Spacemacs, I stripped everything back to basics
+and started a literate config from scratch. The result:
 https://github.com/SeanMooney/emacs/blob/master/lit.org
 
-part of the reaosn i avoided this for so long is the maintance overhead
-of buildign a custom envioenment like this. i think with agentic
-coding tools like claude_code or adier i can do that with less of a time
-sync then beofre so i will likely continue building this out ot make
-may day to day life better.
+Part of the reason I avoided this for so long is the maintenance overhead
+of building a custom environment like this. I think with agentic
+coding tools like Claude Code or Aider, I can do that with less of a time
+sink than before, so I will likely continue building this out to make
+my day to day life better.
 
 
 ## What I Learned
@@ -283,8 +281,8 @@ The most effective approach isn't having AI replace human expertise, but using i
 AI handles the mechanical aspects of writing and research while human expertise guides architectural decisions,
 technical trade-offs, and community dynamics.
 
-As an aside AI will not replace all of your writing, draft prose is still an important initially input.
-it can however enhance the skeleton you lay down to make the content more readable an coherent.
+As an aside, AI will not replace all of your writing; draft prose is still an important initial input.
+It can however enhance the skeleton you lay down to make the content more readable and coherent.
 
 ## Looking Forward
 
@@ -292,24 +290,24 @@ This three-month experiment convinced me that AI can be a powerful tool for Open
 It's not a replacement for human expertise,
 but it can augment it—helping experienced contributors work more efficiently and potentially helping newer contributors learn faster.
 
-using Ai to learn is a double edged sword.
-As i observed when first usign Ai (copilot) to help me work in golang more quickly,
-ai can make you feel productive in a new coding environment like a new language.
+Using AI to learn is a double-edged sword.
+As I observed when first using AI (Copilot) to help me work in Go more quickly,
+AI can make you feel productive in a new coding environment like a new language.
 
-that ease of onboradign comes at a cost, if you dont stuggele and over come challanges as you "learn"
-then you wont embded the knowledge as deeply. As such i still do not recommend using ai hevillry to
-new programmer. if you have not buidl the skills of critical thinkink and reasoning about the effects
-of your chagne ai will happily lead you down the worng path and as tools get more powerful its more
-important not less to analyse there actions.
+That ease of onboarding comes at a cost; if you don't struggle and overcome challenges as you "learn",
+then you won't embed the knowledge as deeply. As such, I still do not recommend using AI heavily to
+new programmers. If you have not built the skills of critical thinking and reasoning about the effects
+of your changes, AI will happily lead you down the wrong path, and as tools get more powerful it's more
+important, not less, to analyze their actions.
 
 The real success isn't in the individual tools or techniques, but in
 discovering how AI can lower barriers to high-quality technical
-contribution. I dont yet have have a perfect writign wrokflow, but
-what i have built is now at least better then before an i will
+contribution. I don't yet have a perfect writing workflow, but
+what I have built is now at least better than before and I will
 likely evolve it more going forward.
 
 The future I'm excited about isn't one where AI writes code for us, but one
-where it helps you express your orgininal intent more clearly and provide tools for you to write better code.
+where it helps you express your original intent more clearly and provides tools for you to write better code.
 
 ---
 
